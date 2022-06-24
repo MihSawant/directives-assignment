@@ -11,18 +11,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'directives-app';
-  show = '';
-  count = 0;
+  show = true;
   counts = [];
-
-  onDisplayBtnClick(){
-    (this.count % 2 == 0) ? this.show = 'visible' : this.show = 'hidden';
-    this.count++;
-    this.counts.push(this.count);
-  }
 
   hasCountHitFive(){
     return this.counts.length >= 5;
+  }
+
+  onDisplayBtnClick(){
+    this.show = !this.show;
+    this.counts.push(new Date());
   }
 
   

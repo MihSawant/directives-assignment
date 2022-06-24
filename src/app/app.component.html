@@ -4,9 +4,10 @@
 <hr>
 <div class="container">
   <button (click)="onDisplayBtnClick()" class="btn btn-primary">Add Details</button>
-  <p [ngStyle]="{visibility: show}">Hello World,
+  <p *ngIf="show">Hello World,
     Welcome to the World of Angular Directives.</p>
-  <p *ngFor="let c of counts" [innerText]="c" [ngClass]="{'text-white': c >= 5}"
-    [ngStyle]="{backgroundColor: c >= 5 ? 'blue' : 'transparent'}">
-  </p>
+</div>
+<div class="container-md">
+  <p *ngFor="let c of counts; let i = index" [ngClass]="{'title-white' : i >= 4}"
+    [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}">{{ c }}</p>
 </div>
