@@ -6,6 +6,7 @@
   <button (click)="onDisplayBtnClick()" class="btn btn-primary">Add Details</button>
   <p [ngStyle]="{visibility: show}">Hello World,
     Welcome to the World of Angular Directives.</p>
-  <p *ngFor="let c of counts" [innerText]="c" [ngClass]="{'title-white':hasCountHitFive()}"
-    [ngStyle]="{backgroundColor: blue}"></p>
+  <p *ngFor="let c of counts" [innerText]="c" [ngClass]="{'text-white': c >= 5}"
+    [ngStyle]="{backgroundColor: c >= 5 ? 'blue' : 'transparent'}">
+  </p>
 </div>
